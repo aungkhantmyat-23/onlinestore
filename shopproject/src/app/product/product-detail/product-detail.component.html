@@ -1,0 +1,160 @@
+<br /><br /><br />
+<body>
+  <div class="containerPhone">
+    <div class="container">
+      <p class="p1">{{ product.name }}</p>
+      <p class="p2">
+        <strong>{{ product.price }} MMK</strong>
+      </p>
+      <hr />
+    </div>
+
+    <div id="carouseldetail" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div
+          class="carousel-item"
+          [ngClass]="{ active: i === 0 }"
+          *ngFor="let photo of product.photo; let i = index"
+        >
+          <img
+            class="d-block w-100"
+            style="width: 500px; height: auto"
+            [src]="photo"
+            alt="i"
+          />
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouseldetail"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouseldetail"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="container">
+      <br />
+      <h5>Description</h5>
+      <p>{{ product.description }}</p>
+
+      <p *ngFor="let other of others">{{ other }}</p>
+
+      <label for="size">Select Size</label>
+      <select class="form-control" id="size" [(ngModel)]="selectedSize">
+        <option *ngFor="let size of product.sizes" [value]="size">
+          {{ size }}
+        </option>
+      </select>
+      
+      <br />
+      <button class="btn1">Add To Cart</button>
+      <br /><br />
+      <button class="btn btn-outline-warning" style="width: 300px">Edit</button>
+    </div>
+    <br />
+  </div>
+
+  <div class="containerWide">
+    <div class="container row">
+      <div class="col-md-7 col-xl-7">
+        <div id="carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div
+              class="carousel-item"
+              [ngClass]="{ active: i === 0 }"
+              *ngFor="let photo of product.photo; let i = index"
+            >
+              <img
+                class="d-block w-100"
+                style="width: 400px; height: auto"
+                [src]="photo"
+                alt="i"
+              />
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carousel"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carousel"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-5 col-xl-5">
+        <br />
+        <p class="p1">{{ product.name }}</p>
+        <p class="p2">
+          <strong>{{ product.price }} MMK</strong>
+        </p>
+        <p *ngFor="let other of others" class="other">{{ other }}</p>
+
+        <hr />
+        <div class="form-group">
+          <label for="size">Select Size</label>
+          <select class="form-control" id="size" [(ngModel)]="selectedSize">
+            <option *ngFor="let size of product.sizes" [value]="size">{{ size }}</option>
+          </select>
+
+          <br />
+          <h5>Description</h5>
+          <p>{{ product.description }}</p>
+
+          <br />
+          <div class="container text-center row">
+            <div class="col-md-6">
+              <button
+                type="button"
+                class="btn btn-outline-dark btn-block"
+                style="width: 175px"
+                (click)="addToCart(product)"
+              >
+                ADD TO CART
+              </button>
+            </div>
+
+            <br />
+            <div class="col-md-6">
+              <button
+                type="button"
+                class="btn btn-outline-warning btn-block"
+                style="width: 175px"
+                (click)="onEdit()"
+              >
+                Edit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Recent View</h3>
+  </div>
+  <div></div>
+</body>
+<br /><br /><br />

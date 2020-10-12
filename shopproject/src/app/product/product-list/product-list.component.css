@@ -1,0 +1,89 @@
+
+@import 'https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap';
+
+.card1{
+    width: 200px;
+    padding-bottom: 10px;
+    background-color: white;
+}
+.r{
+    
+    font-family: 'Mulish', sans-serif;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
+
+@media (max-width: 900px) {
+    .card1{
+        width: 100;
+        padding-bottom: 5px;
+        
+    }
+    .card-footer{
+        height: 30px !important;
+    }
+    .card-body{
+        height: 65px !important;
+    }
+    .r{
+        font-size: 15px;
+    }
+    .price{
+        font-size: 10px;
+    }
+}
+
+.r:hover{
+    background-color: rgb(235, 229, 229);
+    text-decoration: burlywood;
+    
+}
+strong{
+    font-size: 15px;
+    text-align: center;
+}
+.product-discount-label{
+    color: white;
+    background-color: transparent;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(10, 0, 0, 0.5));
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+.price{
+    color: #fa8231;
+   
+    font-family: 'Mulish', sans-serif;
+}
+.price span{
+    color: black;
+    
+    font-family: 'Mulish', sans-serif;
+    text-decoration: line-through;
+    display: inline-block;
+}
+.card-footer{
+    background-color:transparent;
+    font-family: 'Mulish', sans-serif;
+    text-align: center;
+    height: 20px;
+}
+.card-body{
+    height: 70px;
+}
+[aos="fade"] {
+    opacity: 0;
+    transition-property: opacity;
+  }
+  
+  [aos="fade"].aos-animate {
+    opacity: 1;
+  }
+  
+  

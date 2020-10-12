@@ -1,0 +1,69 @@
+<nav
+      class="navbar navbar-expand-lg  bg-dark justify-content-sm-start fixed-top"
+    >
+    
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navTrigger">
+        <i></i>
+        <i></i>
+        <i></i>
+    </span>
+    </button>
+    <ul  class="navbar-nav mr-auto"></ul>
+    <a class="navbar-brand navletter" [routerLink]="['/home']"  >LOGO</a>
+    <div class="collapse navbar-collapse  p-3 p-lg-0 mt-5 mt-lg-0 d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end mobileMenu" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <div class="form-inline ml-3">
+            <div class="input-group">
+                <input type="text" class="form-control search-input border-1" placeholder="Search"
+                  (keyup.enter)="search(input.value)" #input>
+    
+                <div class="input-group-append">
+                    <button type="button" class="btn search-button" ><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+          </div>
+        
+          
+            <a class="nav-item nav-link navletter" [routerLink]="['/admin-view/productform']" 
+            *ngIf="authService.isLogin && authService.role === 'Admin'" >Product Form <span class="sr-only">(current)</span></a>
+          
+          
+            <a class=" nav-item nav-link navletter" [routerLink]="['/admin-view/listproduct']" 
+            *ngIf="authService.isLogin && authService.role === 'Admin'">Product List <span class="sr-only">(current)</span></a>
+          
+          
+            <a class="nav-item nav-link navletter" [routerLink]="['/admin-view/todayorder']" 
+            *ngIf="authService.isLogin && authService.role === 'Admin'" >Order List <span class="sr-only">(current)</span></a>
+          
+          
+            <a class="nav-item nav-link navletter" [routerLink]="['/admin-view/history']" 
+            *ngIf="authService.isLogin && authService.role === 'Admin'">History <span class="sr-only">(current)</span></a>
+          
+            <a class="nav-item nav-link navletter" [routerLink]="['/admin-view/member-list']"
+            *ngIf="authService.isLogin && authService.role === 'Admin'" >Member List <span class="sr-only">(current)</span></a>
+          
+          <a class="nav-item nav-link navletter" [routerLink]="['/login']"  *ngIf="!authService.isLogin"  >Login</a>
+        
+          <a class="nav-item nav-link navletter" [routerLink]="['/']" 
+          *ngIf="authService.isLogin" (click)="logout()" >Logout</a>
+        
+          <a class="nav-item nav-link navletter" [routerLink]="['/signup']"  *ngIf="!authService.isLogin"  >Sign Up</a>
+        
+          <a class="nav-item nav-link navletter" [routerLink]="['member-view/profile/orders']" 
+          *ngIf="authService.isLogin && authService.role === 'Member'"  >My Account</a>
+        
+          <a class="nav-item nav-link navletter" [routerLink]="['/cart']" >
+            <i class="fas fa-shopping-cart" ></i> Cart
+          </a>
+        
+           
+        </ul>
+        
+      </div>
+      
+    </nav>
+    

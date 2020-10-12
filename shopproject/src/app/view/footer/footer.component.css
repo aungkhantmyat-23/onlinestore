@@ -1,0 +1,61 @@
+.footer {
+
+    background-color: rgb(46, 44, 44);
+  
+  }
+  .card{
+    background-color: rgb(46, 44, 44);
+  }
+  
+  h3{
+    margin-left: 5%;
+  }
+  .i{
+    font-size: 45px;
+  }
+  .fb{
+    color: white;
+  }
+  .fb:hover{
+    color: rgb(66, 103, 178);
+  }
+  .ig{
+    color: white;
+  }
+  .ig:hover{
+    color: rgb(225,48,108);
+  }
+  .twit{
+    color: white;
+  }
+  .twit:hover{
+    color: rgb(29, 161, 242);
+  }
+  .hr1{
+    border-top: 1px solid white
+  }
+  .card2{
+    border-top: transparent;
+    border-left: transparent;
+    border-bottom: transparent;
+    border-right: 2px white;
+  }
+  .style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+  .vl {
+    border-color: transparent;
+    height:50px;
+    width: 120px;
+  }
+  .ico{
+    display: flex;
+   
+  }
+  .item{
+    flex-grow: 1;
+    text-align: center;
+    border: 100px transparent;
+  }

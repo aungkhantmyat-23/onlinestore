@@ -1,0 +1,29 @@
+@media (max-width: 900px) {
+	.contbtn{
+        margin-left: 35px;
+        margin-right: 40px;
+    }
+    .btn{
+        width: 250px !important;
+    }
+    .containerwide{
+        display: none;
+    }
+}
+
+
+@media (min-width : 901px){
+    .containerwide{
+        width: 1500px;
+    }
+    .containerPhone{
+        display: none;
+    }
+    .btn2{
+       margin-left: 60%;
+    }
+    .btn{
+        width: 200px !important;
+        height: 50px !important;
+    }
+}

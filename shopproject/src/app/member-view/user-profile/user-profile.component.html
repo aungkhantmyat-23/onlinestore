@@ -1,0 +1,91 @@
+<br><br>
+
+<div class="container containerPhone">
+
+  <div class="row">
+    <div class="col-10">
+        <div class="card card1">
+            <div class="card-body border-0 row">
+              <div class="row ico" >
+                <div class="col-2">
+                <div class="profile-container">
+                  <h3 class="profile"><i class="far fa-user"></i></h3> 
+                </div>
+               
+              </div>
+              <div class="col-10 ">
+                <h5 class="item"> &emsp;{{member.username}}</h5>
+                <p>&emsp; {{member.email}}</p>
+              </div>
+            </div>
+            
+             
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+      
+    </div>
+    
+</div>
+<hr>
+
+<div class="topnav">
+  <a class="nav-link"  [routerLink]="['/member-view/profile/orders']" routerLinkActive="router-link-active" >My Orders</a>
+  <a class="nav-link" [routerLink]="['/member-view/profile/purchased-item']" routerLinkActive="router-link-active" >Order History</a>
+  <a class="nav-link"  [routerLink]="['/member-view/profile/profile-edit']" routerLinkActive="router-link-active" >Personal Data</a>
+</div>
+<router-outlet></router-outlet>
+</div>
+
+
+<div class=" containerWide">
+<div class="container ">
+  <div class="row">
+    <div class="col-md-8">
+        <div class="card card1">
+            <div class="card-body border-0 row">
+              <div class="row ico">
+                <div class="col-2">
+                  <div class="profile-container  mr-5">
+                    <h3 class="profile pW"><i class="far fa-user"></i></h3> 
+                  </div>
+                 
+                </div>
+                <div class="col-10 ">
+                  <h5 class="item"> {{member.username}}</h5>
+                  <p> {{member.email}}</p>
+                </div>
+
+            </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+      <br><br><br>
+      <button type="button" class="btn btn-outline-danger">Ban</button>
+    </div>
+  </div>  
+</div>
+
+<hr>
+<div class="container row">
+  
+ <div class="col-md-2">
+        
+          <a class="nav-link"  [routerLink]="['/member-view/profile/orders']" routerLinkActive="router-link-active" >My Orders</a>
+       
+          <a class="nav-link" [routerLink]="['/member-view/profile/purchased-item']" routerLinkActive="router-link-active" >Purchase Items</a>
+        
+          <a class="nav-link"  [routerLink]="['/member-view/profile/profile-edit']" routerLinkActive="router-link-active" >Personal Data</a>
+        
+ </div>     
+   
+<div class="container col-md-10">
+  <router-outlet></router-outlet>
+</div>
+<br><br>
+</div>
+</div>

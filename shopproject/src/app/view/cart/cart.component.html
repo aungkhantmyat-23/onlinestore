@@ -1,0 +1,94 @@
+<br>
+<br>
+<br>
+<div class="containerPhone">
+  <h4>Your Cart</h4>
+  <br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col" class="text-center">Quantity</th>
+            <th scope="col">Size</th>
+            <th scope="col">Price</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let order of orders, let i =index">
+            <td><img [src]="order.product.photo[0]" height="75px" width="75px"></td>
+            
+            <td>
+              <input type="number" class="form-control" min="1" step="any" [(ngModel)]="order.quantity" >
+            </td>
+            <td>{{order.size}}</td>
+            <td>{{order.product.price}} MMK</td>
+           
+          </tr>
+          
+        </tbody>
+      </table>
+      
+      <br>
+        
+           <div class="container contbtn">
+            
+              
+            <button class="btn btn-dark bg-gray btn-block " [routerLink]="['/member-view/deliverform']" routerLinkActive="router-link-active">Check Out</button>
+           </div>
+      
+</div>
+
+<div class="container containerwide">
+  <h3>Your Cart</h3>
+  <br>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Product</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Size</th>
+          <th scope="col">Price</th>
+          <th scope="col" >Option</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders, let i =index">
+          <td><img [src]="order.product.photo[0]" height="75px" width="75px"></td>
+          <td>{{order.product.name}}</td>
+          <td>
+            <input type="number" class="form-control" min="1" step="any" [(ngModel)]="order.quantity"
+              style="width: 60px;" >
+          </td>
+          <td>{{order.size}}</td>
+          <td>{{order.product.price * order.quantity}} MMK</td>
+          <td class="text-danger">Remove</td>
+        </tr>
+       <tr>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td>{{shoppingCart.total}} MMK</td>
+         <td></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <br>
+     
+         <div class="row btn2">
+          <div class="col-md-6">
+            
+          </div>
+          <div class="col-md-6"> 
+            <button class="btn btn-dark bg-gray  " [routerLink]="['/member-view/deliverform']" routerLinkActive="router-link-active" >Check Out</button>
+          </div>
+         </div>
+    
+</div>
+
+
+<br><br><br>

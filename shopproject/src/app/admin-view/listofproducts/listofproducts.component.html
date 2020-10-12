@@ -1,0 +1,26 @@
+<br><br><br>
+<div class="container">
+    <div class="h3">
+        Products List
+    </div>
+    <table class="table table-striped table-bordered tabletext">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Category</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of (products$ | async), let i =index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.category}}</td>
+            <td><button type="button" class="btn btn-outline-warning btn-block" > Edit</button></td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

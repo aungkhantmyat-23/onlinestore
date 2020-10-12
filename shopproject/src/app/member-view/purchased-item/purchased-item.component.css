@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+
+    .containerWide{
+        display: none;
+    }
+}
+@media (min-width:769px){
+    .containerPhone{
+        display: none;
+    }
+}

@@ -1,0 +1,136 @@
+@import 'https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap';
+@media (max-width: 900px) {
+  .card{
+    width: 200 !important;
+  }
+  .image{
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .right-paddle2 {
+    right: 0;
+    background-color: transparent;
+  }
+  .right-paddle2:focus{
+    box-shadow: none;
+    border: transparent;
+    background-color: transparent;
+  }
+  .left-paddle2 {
+    left: 0;
+    background-color: transparent;
+    
+  }
+  .left-paddle2:focus{
+    box-shadow: none;
+    border: transparent;
+    background-color: transparent;
+  }
+  .item{
+    width:200px;
+    
+  }
+  .paddle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1em;
+  }
+}
+
+
+.card{
+  width: 250px;
+}
+.image{
+  width: 250px;
+  height: 250px;
+  
+}
+
+::-webkit-scrollbar {
+    height: 8px;
+    background-color: white;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius: 0.5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background:black; 
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: none; 
+    border-radius: 0.5px;
+  }
+  .menu-wrapper {
+    position: relative;
+    margin: 1em auto;
+    border: 1px solid white;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  
+  .menu	{
+    
+    background: white;
+    box-sizing: border-box;
+    
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    
+  }
+ 
+  .item {
+    display: inline-block;
+    padding: 30px;
+    align-items: center;
+    text-align: center;
+  }
+  .paddles {
+
+  }
+  .paddle {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 3em;
+  }
+  .left-paddle2 {
+    left: 0;
+    background-color:  transparent;
+    
+  }
+  .left-paddle2:focus{
+    box-shadow: none;
+    border: white;
+  }
+  
+
+  .right-paddle2 {
+    right: 0;
+    
+    background-color:  transparent;
+  }
+  .right-paddle2:focus{
+    box-shadow: none;
+    border:  transparent;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .r{ 
+    font-family: 'Mulish', sans-serif;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+  }
+  .r:hover{
+    background-color: rgb(235, 229, 229);
+    text-decoration: burlywood;
+    
+  }

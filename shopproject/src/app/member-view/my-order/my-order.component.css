@@ -1,0 +1,25 @@
+@media (max-width: 900px) {
+    .date{
+        text-align: end;
+    }
+    .containerWide{
+        display: none;
+    }
+    .price{
+        font-size: 15px;
+    }
+    p{
+        font-size: 15px !important;
+    }
+}
+@media (min-width: 901px) {
+    .containerPhone{
+        display: none;
+    }
+    .date{
+        text-align: end;
+    }
+}
+.tp{
+text-align: end;
+}

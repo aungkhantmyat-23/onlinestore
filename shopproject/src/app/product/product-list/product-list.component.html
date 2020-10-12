@@ -1,0 +1,36 @@
+<br><br>
+<br>
+<div class="container ">
+
+<div class="card border-0">
+    <div class="container  align-items-center">
+       
+            <div class="row  " >
+                
+                <div class="card card1 border-0  col-6  col-sm-6 col-md-4 col-lg-3 mobilephoto" (click)="viewDetail(product)"
+                 *ngFor="let product of (products$ | async) | productFilter:productName:categoryName"
+                  data-aos="fade-up" data-aos-delay="50" data-aos-duration="2000" data-aos-easing="ease-in-out"  >
+                     <img class="card-img-top image"[src]="product.photo[0]" alt="Card image cap">
+                    <div class="card-body text-center">
+                     <a (click)="viewDetail(product)"  class="r ">
+                         {{product.name}}
+                     </a>   
+                    </div>
+                    <div class="card-footer border-0">
+                        <strong >{{product.price}} MMK</strong>
+                    </div>
+                    <br>  
+               </div>
+    
+    
+            </div>
+        
+    
+        <br>
+           
+           
+    </div>
+</div>
+
+</div>
+<br><br><br>

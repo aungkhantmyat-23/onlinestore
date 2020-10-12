@@ -1,0 +1,27 @@
+<div class="menu-wrapper " data-aos="fade-left">
+  <ul class="menu">
+    <li class="item" *ngFor="let product of (products$ | async) ">
+     
+      <div class="card" style="border: 0;" (click)="viewDetail(product)">
+        
+        <img class="card-img-top image"  [src]="product.photo[0]" alt="Card image cap">
+        <div class="card-body">
+          <a href="#" class="r" (click)="viewDetail(product)">{{product.name}}</a>
+        </div>
+      
+      </div>
+     
+    </li>
+   
+  </ul>
+
+  <div class="paddles">
+    <button type="button" class="left-paddle2 paddle hidden border-0 btn btn-white" >
+      <i class="fas fa-chevron-left text-black"></i>
+    </button>
+    <button type="button" class="right-paddle2 paddle border-0 btn btn-white">
+      <i class="fas fa-chevron-right text-black"></i>
+    </button>
+  </div>
+
+</div>

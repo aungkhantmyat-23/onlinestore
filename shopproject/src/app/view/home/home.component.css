@@ -1,0 +1,236 @@
+@import 'https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap';
+body{
+  overflow-x: hidden;
+}
+
+@media (max-width: 900px) {
+  .jmb1{
+    height: 200px;
+    background-position: center center !important; 
+    background-repeat: no-repeat;
+  }
+  .jmb2{
+    height: 200px;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+  }
+  h2{
+    font-size: 40px;
+    margin-top: 25px !important; 
+  }
+  .jumb4{
+    height: 300px !important;
+    background-position: center center !important;
+    background-repeat: no-repeat;
+  }
+  h1{
+    font-size: 40px;
+    margin-top: 50px;
+  }
+  
+}
+
+.tit{
+    
+    margin-top: 250px;
+}
+
+h2{
+  margin-top: 40%;
+  margin-bottom: 40%;
+}
+.jumb{
+    background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.5)), url(../../../assets/images/markus-spiske-GVF30JP2nIg-unsplash.jpg);
+    background-position-y:center ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .jumb4{
+    background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.5)), url(../../../assets/images/lauren-fleischmann-ZogRkvEnahU-unsplash.jpg);
+    background-position-x:center ;
+    background-repeat: no-repeat;
+    height: 500px;
+    background-size: cover;
+  }
+  .jumb4:hover{
+    background: linear-gradient(rgba(0, 0, 0, 0.637),rgba(0, 0, 0, 0.637)), url(../../../assets/images/lauren-fleischmann-ZogRkvEnahU-unsplash.jpg);
+
+    background-position-x:center ;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+  }
+  .jmb1{
+    background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.5)), url(../../../assets/images/alex-perez-AIfbUyzhKz0-unsplash.jpg);
+    background-position-x:center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+  }
+  .jmb1:hover{
+    background: linear-gradient(rgba(0, 0, 0, 0.637),rgba(0, 0, 0, 0.637)), url(../../../assets/images/alex-perez-AIfbUyzhKz0-unsplash.jpg);
+    background-position-x:center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .jmb2{
+    background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.5)), url(../../../assets/images/conor-luddy-IVaKksEZmZA-unsplash.jpg);
+    background-position-x:center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  .jmb2:hover{
+    background: linear-gradient(rgba(0, 0, 0, 0.637),rgba(0, 0, 0, 0.637)), url(../../../assets/images/conor-luddy-IVaKksEZmZA-unsplash.jpg);
+    background-position-x:center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  [aos="fade"] {
+    opacity: 0;
+    transition-property: opacity;
+  }
+
+  [aos="fade"].aos-animate {
+    opacity: 1;
+  }
+
+
+
+.r{
+  font-family: 'Mulish', sans-serif;
+  text-align: center;
+  color: black;
+  font-size: 15px;
+}
+.r:hover{
+  background-color: rgb(235, 229, 229);
+  text-decoration: burlywood;
+
+}
+
+
+  .display-4{
+    color: white;
+  }
+  .card{
+    margin:10%; /* Added */
+  float: none; /* Added */
+  background: transparent;
+  }
+  .card-header{
+    background: transparent;
+  }
+  .card-footer{
+    background: transparent;
+  }
+
+
+
+
+
+  .hr2{
+    border-top: 1px solid black;
+
+  }
+  .style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+.footer {
+
+  background-color: rgb(46, 44, 44);
+
+}
+
+h3{
+  margin-left: 5%;
+}
+.i{
+  font-size: 55px;
+}
+.fb{
+  color: white;
+}
+.fb:hover{
+  color: rgb(66, 103, 178);
+}
+.ig{
+  color: white;
+}
+.ig:hover{
+  color: rgb(225,48,108);
+}
+.twit{
+  color: white;
+}
+.twit:hover{
+  color: rgb(29, 161, 242);
+}
+.hr1{
+  border-top: 1px solid white
+}
+.card2{
+  border-top: transparent;
+  border-left: transparent;
+  border-bottom: transparent;
+  border-right: 2px white;
+}
+
+
+
+.direction-cue{
+  position: absolute;
+  bottom: 0;
+  animation: clear 0.5s 0.1s forwards;
+  transform: translateY(2rem);
+  z-index: 10;
+  overflow: hidden;
+}
+
+.direction-cue-icon{
+  animation: slide-down 0.5s 0.5s forwards, pulse 2s 1s ease-in-out infinite;
+  transform: translateY(-2rem);
+  opacity: 1;
+}
+@keyframes slide-down {
+  from{
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+
+  to{
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%{
+    opacity: 1;
+    transform: none;
+    transform: scale(1);
+  }
+
+  50%{
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes clear {
+  to{
+    opacity: 1;
+    transform: none;
+  }
+
+}

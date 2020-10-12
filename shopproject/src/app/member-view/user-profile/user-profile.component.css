@@ -1,0 +1,88 @@
+@media (max-width: 900px) {
+	.containerWide{
+		display: none;
+    }
+    .topnav{
+        height: 50px !important;
+    }
+    button{
+        margin-left: 220px !important;
+    }
+    .item{
+        font-size: 25px !important;
+    }
+    .pW{
+        font-size: 30px !important;
+    }
+}
+@media(min-width : 901px){
+    .containerPhone{
+        display: none;
+    }
+    a{
+        color: black;
+    }
+    a:hover{
+        color:gray;
+    }
+}
+.pW{
+    font-size: 40px;
+}
+.ic{
+    text-align: end;
+}
+.ea{
+   align-items: flex-end;
+}
+
+.card1{
+    background-color: transparent;
+    border: white;
+}
+
+.ico{
+    display: flex;
+   
+  }
+  .item{
+    flex-grow: 1;
+    text-align: start;
+    border: 100px transparent;
+    font-size: 30px;
+  }
+  .profile-container h3 {
+	border: 1px solid white;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 50px;
+	height: 40px;
+    width: 40px;
+    
+}
+
+
+
+
+.topnav {
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  .topnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: white;
+    color: rgb(49, 42, 42);
+  }
+  
+  

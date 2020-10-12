@@ -1,0 +1,72 @@
+<body>
+  <div class="jumbotron jumbotron-fluid jumb" style="height: 97vh; width: auto">
+    <div
+      class="container text-center tit"
+      data-aos="zoom-out-up"
+      data-aos-once="false"
+      data-aos-duration="2000"
+      data-aos-easing="ease-in-out"
+    >
+      <h1 class="display-4 text-white">Fluid jumbotron</h1>
+      <p class="text-white">
+        This is a modified jumbotron that occupies the entire horizontal space
+        of its parent.
+      </p>
+    </div>
+  </div>
+
+  <div class="direction-cue bg-white text-center w-100 align-self-end">
+    <i class="direction-cue-icon fas fa-chevron-down fa-lg text-dark"></i>
+  </div>
+
+  
+  
+  <div>
+    <h3>New Arrival</h3>
+    <app-new-arrival></app-new-arrival>
+  </div>
+
+  <div class="row bg-black">
+    <div
+      class="jumbotron jmb1 col-12 col-md-6"
+      data-aos="fade-right"
+      [routerLink]="['/products/productlist']"
+      [queryParams]="{ category: 'Category 1' }"
+      routerLinkActive="router-link-active"
+    >
+      <h2 class="display-4 text-center">Category 1</h2>
+    </div>
+
+    <div
+      class="jumbotron jmb2 col-12 col-md-6"
+      data-aos="fade-left"
+      [routerLink]="['/products/productlist']"
+      [queryParams]="{ category: 'Category 2' }"
+    >
+      <h2 class="display-4 text-center">Category 2</h2>
+    </div>
+  </div>
+
+  <h3>Trending Products</h3>
+  <div style="width: 100%">
+    <app-mostbuyitems></app-mostbuyitems>
+  </div>
+
+  <div class="jumbotron jumb4" [routerLink]="['/products/productlist']" [queryParams]="{category:'Category 3'}">
+    <div
+      class="container text-center"
+      data-aos="zoom-out-up"
+      data-aos-once="false"
+      data-aos-duration="2000"
+      data-aos-easing="ease-in-out"
+    >
+      <div class="card border-0">
+        <div class="card-body border-0">
+          <h1 class="display-4 text-white">Category 3</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="style-two" />
+</body>
