@@ -8,12 +8,14 @@ export class CommonUtils{
     }
     static mapToObj(map){
         let obj ={};
-        map?.forEach((key) => {
-            let arr =[];
-            Object.keys(key).forEach(k => arr.push(k));
-            obj[key[arr[0]]] = key[arr[1]]
-            arr.splice(0,2);
-        });
+        // map?.forEach((key) => {
+        //     let arr =[];
+        //     Object.keys(key).forEach(k => arr.push(k));
+        //     obj[key[arr[0]]] = key[arr[1]]
+        //     arr.splice(0,2);
+        // });
+        Object.keys(map)
+        console.log(map)
         return obj;
     }
     static objToMap(obj){

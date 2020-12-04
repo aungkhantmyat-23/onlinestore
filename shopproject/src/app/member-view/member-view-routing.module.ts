@@ -18,7 +18,7 @@ const routes:Routes =[
           {path:'profile-edit',component:ProfileEditComponent},
         ]
       },
-      {path:'deliverform',component:DeliverFormComponent}
+      {path:'delieverform',component:DeliverFormComponent}
     ]
   }
   

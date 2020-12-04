@@ -17,5 +17,7 @@ export class ProductService extends BaseService<Product>{
     findById(id:number){
         return this.http.get<Product>(`${this.getUrl()}/${id}`)
     }
- 
+    deleteById(id:number){
+        return this.http.delete(PRODUCT_API + `/${id}`)
+    }
 }

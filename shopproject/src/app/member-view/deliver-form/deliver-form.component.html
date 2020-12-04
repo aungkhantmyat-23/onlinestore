@@ -1,16 +1,18 @@
 <div class="container">
     <div class="form-container sign-in-container" data-aos="zoom-out-up" data-aos-once="false" data-aos-duration="2000" data-aos-easing="ease-in-out">
-        <form action="#">
+        <form [formGroup]="transactionForm">
             <h2 class="f">Place To Deliever Your Order <i class="fas fa-truck"></i></h2>
             <br>
             <label for="" class="mr-auto"><h5>Select Division or State</h5></label>
-            <select name="" id="" class="form-control opt1" formControlName="division"
-            [class.is-invalid]="division?.invalid && (division?.dirty|| division?.touched)" required>
-            <option *ngFor="let division of divisions" [ngValue]="division">{{division.name}}</option>
-          </select>
+            <select class="form-control opt1" formControlName="division"
+                [class.is-invalid]="division?.invalid && (division?.dirty|| division?.touched)" required>
+                <option *ngFor="let division of divisions" [ngValue]="division">
+                    {{division.name}}
+                </option>
+            </select>
           <br>
           <label for="" class="mr-auto"><h5>Select Township</h5></label>
-          <select name="" id="" class="form-control opt1" formControlName="township" formControlName="township"
+          <select name="" id="" class="form-control opt1" formControlName="township"
           [class.is-invalid]="township?.invalid && (township?.dirty|| township?.touched)" required>
           <option *ngFor="let township of townships | townshipFilter:division1" [ngValue]="township">{{township.name}}</option>
         </select>
@@ -30,7 +32,7 @@
                 formControlName="phno" [class.is-invalid]="phno?.invalid && (phno?.dirty|| phno?.touched)"
                         placeholder="Enter Your Phone Number">  
                         <br>         
-            <button (click)="save()"
+            <button 
             [disabled]="!transactionForm.valid">Confirm</button>
         </form>
         <br>

@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TownshipFilterPipe } from './deliver-form/township-filter.pipe';
 import { MemberViewComponent } from './member-view.component';
 import { MemberViewRoutingModule } from './member-view-routing.module';
@@ -25,6 +25,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     MemberViewRoutingModule,
     FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MemberViewModule { }

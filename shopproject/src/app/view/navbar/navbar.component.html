@@ -56,11 +56,14 @@
           <a class="nav-item nav-link navletter" [routerLink]="['member-view/profile/orders']" 
           *ngIf="authService.isLogin && authService.role === 'Member'"  >My Account</a>
         
-          <a class="nav-item nav-link navletter" [routerLink]="['/cart']" >
+          <a class="nav-item nav-link navletter " [routerLink]="['/cart']" >
+            <p class="cartnotiph text-center" *ngIf="shoppingCart.totalquantity > 0">{{shoppingCart.totalquantity}}</p>
+            <p class="cartnotipc text-center" *ngIf="shoppingCart.totalquantity > 0">{{shoppingCart.totalquantity}}</p>
             <i class="fas fa-shopping-cart" ></i> Cart
+           
           </a>
         
-           
+          
         </ul>
         
       </div>

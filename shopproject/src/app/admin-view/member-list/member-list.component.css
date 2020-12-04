@@ -1,0 +1,35 @@
+.search-input{
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid gray;
+    transition: all .4s;
+}
+
+input, textarea{
+    color: black;
+}
+.navbar-toggler-icon{
+    color: gray;
+}
+
+
+.search-input:focus{
+    background: transparent;
+    box-shadow: none;
+    
+}
+.search-button{
+        
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid gray;
+    transition: all .4s;
+   
+}
+
+
+.fa-search{
+    color: gray;
+}

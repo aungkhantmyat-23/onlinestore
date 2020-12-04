@@ -13,6 +13,7 @@
     text-align: center;
     color: black;
     font-size: 20px;
+    
 }
 
 @media (max-width: 900px) {
@@ -29,6 +30,11 @@
     }
     .r{
         font-size: 15px;
+        overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
     }
     .price{
         font-size: 10px;

@@ -1,3 +1,4 @@
+import { ShoppingCart } from './../../model/shoppingcart';
 import { AuthService } from './../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -10,9 +11,10 @@ declare let $: any;
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router,public authService:AuthService) { }
+  constructor(public shoppingCart:ShoppingCart,private router: Router,public authService:AuthService) { }
 
   ngOnInit(): void {
+    
     $(document).ready(function() {
       var fixHeight = function() {
         $('.navbar-nav').css(

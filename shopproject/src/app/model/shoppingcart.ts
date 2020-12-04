@@ -42,7 +42,11 @@ export class ShoppingCart{
     get total(){
         return this._orders.reduce((acc,odr)=> acc + (odr.quantity * odr.product.price),0)
     }
+    
     clear(){
         this._orders=[]
+    }
+    get totalquantity(){
+        return this._orders.reduce((acc,odr)=> acc + odr.quantity ,0)
     }
 }

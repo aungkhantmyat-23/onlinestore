@@ -2,7 +2,7 @@ import { CommonUtils } from './../../common/common-util';
 import { UploadService } from './../../service/upload.service';
 import { ProductService } from './../../service/product.service';
 import { Product } from './../../model/product';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';
@@ -24,11 +24,17 @@ export class ProductFormComponent implements OnInit {
     private productService:ProductService,private uploadService:UploadService) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe(
-      data => {
-        this.product = data['product'];
-      }
-    )
+    // this.route.data.subscribe(
+    //   data => {
+    //     this.product = data['product'];
+    //   }
+    // )
+    this.route.params.pipe(switchMap(params => this.productService.findById(params['id'])))
+      .subscribe(product => {
+        this.product = product;
+        this.images = product.photo;
+        this.initForm()});
+      
     this.initForm();
   }
   get getOtherForm(){
@@ -84,7 +90,10 @@ export class ProductFormComponent implements OnInit {
           return this.productService.save(product)
         }
       )
-    ).subscribe(responseData => this.productForm.reset())
+    ).subscribe(responseData =>{
+      this.productForm.reset();
+      this.router.navigate(['/home'])
+    } )
   }
 
   

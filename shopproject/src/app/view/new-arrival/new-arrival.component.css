@@ -1,11 +1,21 @@
 @import 'https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap';
 @media (max-width: 900px) {
   .card{
-    width: 200 !important;
+    width: 180 !important;
+  }
+  .r{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+  .item{
+    width: 200px !important;
   }
   .image{
-    width: 200px !important;
-    height: 200px !important;
+    width: 180px !important;
+    height: 180px !important;
   }
   .right-paddle2 {
     right: 0;
@@ -49,7 +59,8 @@
 }
 
 ::-webkit-scrollbar {
-    height: 8px;
+    height: 7px;
+    width: 400px !important;
     background-color: white;
   }
   ::-webkit-scrollbar-thumb {
@@ -128,9 +139,18 @@
     text-align: center;
     color: black;
     font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
   }
   .r:hover{
     background-color: rgb(235, 229, 229);
     text-decoration: burlywood;
-    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
   }

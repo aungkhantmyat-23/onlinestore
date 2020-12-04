@@ -1,14 +1,10 @@
 package com.shop.api;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.shop.entity.Product;
 import com.shop.service.ProductService;
@@ -27,11 +23,33 @@ public class ProductApi {
 	
 	@GetMapping
 	public List<Product> findAll(){
-		return service.findAll();
+		var products = service.findAll();
+		products.sort(new Comparator<Product>() {
+			@Override
+			public int compare(Product p1, Product p2) {
+
+				if (p1.getId() == p2.getId()) {
+
+					return 0;
+
+				}
+				else if (p1.getId() > p2.getId()){
+
+					return -1;
+				}
+				else {
+					return 1;
+				}
+			}
+
+		});
+		return products;
 	}
+
 	
 	@GetMapping("{id}")
 	public Product findById(@PathVariable int id) {
 		return service.findById(id);
 	}
+
 }
