@@ -28,7 +28,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain chain)
-        throws IOException, ServletException{
+            throws IOException, ServletException{
         String token = request.getHeader(environment.getProperty("jwt.header"));
 
         if(null == token){
@@ -40,7 +40,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
         chain.doFilter(request,response);
     }
 
-   private Authentication getAuthentication(String token){
+    private Authentication getAuthentication(String token){
         String username = JWT.require(Algorithm.HMAC512(environment.getProperty("jwt.secret").getBytes()))
                 .build()
                 .verify(token)
@@ -51,5 +51,5 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
                     new ArrayList<>()
             );
         return null;
-   }
+    }
 }

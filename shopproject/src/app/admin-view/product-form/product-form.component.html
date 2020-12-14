@@ -15,7 +15,7 @@
                                 Product
                             </label>
                             <input type="text" class="form-control" id="productname"
-                                placeholder="Insert Product Name" formControlName="name" 
+                                placeholder="Insert Product Name" formControlName="name"
                                 [class.is-invalid]="name?.invalid && (name?.dirty|| name?.touched)">
                             <div *ngIf="name?.invalid && (name?.dirty||name?.touched)">
                                 <small *ngIf="name.errors.required" class="text text-danger">Product Name is required</small>
@@ -27,9 +27,9 @@
                             <label for="productname">
                                 Category
                             </label>
-                            <select class="form-control" formControlName="category" 
+                            <select class="form-control" formControlName="category"
                             [class.is-invalid]="category?.invalid && (category?.dirty|| category?.touched)">
-                            <option *ngFor="let category of categories" [ngValue]="category">{{category}}</option>
+                            <option *ngFor="let category of categories" [value]="category">{{category}}</option>
                               </select>
                               <div *ngIf="category?.invalid && (category?.dirty||category?.touched)">
                                 <small *ngIf="category.errors.required" class="text text-danger">Category</small>
@@ -48,14 +48,14 @@
                                         <small *ngIf="price.errors.required" class="text text-danger">Price is required</small>
                                     </div>
                         </div>
-                           
+
                         <!-- Size -->
                         <div class="form-group" formArrayName="sizes">
                           <div class="form-row" *ngFor="let size of sizes.controls; let j=index">
                             <div class="form-group col-4">
                               <input type="text" class="form-control" [formControlName]="j" placeholder="Size">
                             </div>
-                            
+
                             <div class="form-group col-2 text-center">
                               <button class="btn btn-outline-danger btn-block" (click)="removeSize(j)"><i class="fas fa-times"></i></button>
                             </div>
@@ -90,7 +90,7 @@
                         </div>
 
 
-                        <button class="btn1" (click)="save(fc.files)" 
+                        <button class="btn1" (click)="save(fc.files)"
                          [disabled]="!productForm.valid">Confirm</button>
                     </form>
                 </div>
@@ -103,9 +103,9 @@
                           *ngFor="let image of images; let i=index">
                           <img class="d-block" [src]="image" alt="i" style="height: 400px;width: 400px;">
                         </div>
-                        
+
                       </div>
-                      
+
                     </div>
                   </div>
                   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -118,9 +118,9 @@
                   </a>
                   <br>
                   <div class="container">
-                   
+
                   </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -129,4 +129,3 @@
 <br>
 
 
-  

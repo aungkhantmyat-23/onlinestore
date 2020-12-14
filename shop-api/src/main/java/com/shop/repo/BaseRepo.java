@@ -8,6 +8,6 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 @NoRepositoryBean
 public interface BaseRepo<T, ID> extends JpaRepository<T, ID> {
-	List<T> search(String jpql, Map<String, Object> params);
+    List<T> search(String jpql, Map<String, Object> params);
     <D> List<D> search(String jpql, Map<String, Object> params, Class<D> type);
 }

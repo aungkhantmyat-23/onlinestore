@@ -18,27 +18,27 @@ import lombok.Data;
 @Table(name = "MEMBER_TBL")
 @Data
 public class Member implements Serializable{
-	 private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    private String email;
-	    private String username;
-	    @JsonProperty(access = Access.WRITE_ONLY)
-	    private String password;
-	    private boolean enable;
-	    @Enumerated(EnumType.STRING)
-	    private Role role;
+	@Id
+	private String email;
+	private String username;
+	@JsonProperty(access = Access.WRITE_ONLY)
+	private String password;
+	private boolean enable;
+	@Enumerated(EnumType.STRING)
+	private Role role;
 
-	    public Member() {
-	        this.role = Role.Member;
-	    }
+	public Member() {
+		this.role = Role.Member;
+	}
 
-	    public enum Role{
-	        Admin, Member
-	    }
+	public enum Role{
+		Admin, Member
+	}
 
-	    @Override
-	    public String toString() {
-	        return String.format("{'email' : %s, 'username': %s, 'role': %s}", email, username, role);
-	    }
+	@Override
+	public String toString() {
+		return String.format("{'email' : %s, 'username': %s, 'role': %s}", email, username, role);
+	}
 }

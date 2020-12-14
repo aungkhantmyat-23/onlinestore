@@ -37,7 +37,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     public Authentication attemptAuthentication(
             HttpServletRequest request,
             HttpServletResponse response)
-        throws AuthenticationException {
+            throws AuthenticationException {
         try {
             Member member = new ObjectMapper().readValue(
                     request.getInputStream(),Member.class

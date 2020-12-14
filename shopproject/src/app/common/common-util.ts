@@ -6,16 +6,9 @@ export class CommonUtils{
         reader.readAsDataURL(file);
         reader.onloadend=() => obj.imageUrl =reader.result as string
     }
-    static mapToObj(map){
-        let obj ={};
-        // map?.forEach((key) => {
-        //     let arr =[];
-        //     Object.keys(key).forEach(k => arr.push(k));
-        //     obj[key[arr[0]]] = key[arr[1]]
-        //     arr.splice(0,2);
-        // });
-        Object.keys(map)
-        console.log(map)
+    static mapToObj(others: any[]){
+        let obj ={}
+        others.map(other => obj[other.otherName] = other.otherDesc);
         return obj;
     }
     static objToMap(obj){

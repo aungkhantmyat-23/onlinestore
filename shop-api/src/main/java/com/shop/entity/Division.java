@@ -9,10 +9,10 @@ import lombok.Data;
 @Data
 public class Division implements Serializable{
 
-	 private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-	    @Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Integer id;
-	    private String name;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String name;
 }

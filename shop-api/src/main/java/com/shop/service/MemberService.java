@@ -29,8 +29,8 @@ public class MemberService extends BaseService<Member, String>{
 
     @Override
     public Member save(Member member) {
-       if(!member.isEnable())
-           member.setPassword(passwordEncoder.encode(member.getPassword()));
+        if(!member.isEnable())
+            member.setPassword(passwordEncoder.encode(member.getPassword()));
 
         ActivationKey activationKey = new ActivationKey(repo.save(member));
         activationKeyService.save(activationKey);

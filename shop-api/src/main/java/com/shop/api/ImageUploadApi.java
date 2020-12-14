@@ -24,7 +24,7 @@ public class ImageUploadApi {
 
     @PostMapping(produces = {MediaType.TEXT_PLAIN_VALUE})
     public ResponseEntity<String> upload(@RequestParam MultipartFile file)
-        throws IllegalStateException, IOException{
+            throws IllegalStateException, IOException{
         String newFileName = LocalDateTime.now().format(
                 DateTimeFormatter.ofPattern("yyyy-MM-ddHH-mm-ss")
         )

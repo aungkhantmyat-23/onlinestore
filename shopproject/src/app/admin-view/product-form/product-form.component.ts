@@ -1,11 +1,11 @@
-import { CommonUtils } from './../../common/common-util';
-import { UploadService } from './../../service/upload.service';
-import { ProductService } from './../../service/product.service';
-import { Product } from './../../model/product';
-import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
-import { switchMap } from 'rxjs/operators';
+import {CommonUtils} from './../../common/common-util';
+import {UploadService} from './../../service/upload.service';
+import {ProductService} from './../../service/product.service';
+import {Product} from './../../model/product';
+import {Router, ActivatedRoute, Params} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormArray, FormControl, Validators, FormBuilder, Form} from '@angular/forms';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-form',
@@ -14,61 +14,67 @@ import { switchMap } from 'rxjs/operators';
 })
 export class ProductFormComponent implements OnInit {
 
-  productForm:FormGroup
-  product:Product;
-  categories=['Category 1','Category 2','Category 3']
-  isEdit=false;
+  productForm: FormGroup;
+  product: Product;
+  categories = ['Category 1', 'Category 2', 'Category 3'];
+  isEdit = false;
+  images: string[] = [];
 
-  images:string[] =[];
-  constructor(private router:Router,private route: ActivatedRoute,
-    private productService:ProductService,private uploadService:UploadService) { }
+  constructor(private fb: FormBuilder, private router: Router, private route: ActivatedRoute,
+              private productService: ProductService, private uploadService: UploadService) {
+  }
 
   ngOnInit(): void {
-    // this.route.data.subscribe(
-    //   data => {
-    //     this.product = data['product'];
-    //   }
-    // )
-    this.route.params.pipe(switchMap(params => this.productService.findById(params['id'])))
-      .subscribe(product => {
-        this.product = product;
-        this.images = product.photo;
-        this.initForm()});
-      
     this.initForm();
+
+    this.route.params.subscribe(
+      params => {
+        let id = params['id'];
+        if (id)
+          this.productService.findById(+id).subscribe(
+            product => {
+              this.product = product;
+              this.images = product.photo;
+              this.initForm();
+            }
+          )
+      }
+    )
   }
-  get getOtherForm(){
+
+  get getOtherForm() {
     return this.productForm.get('others') as FormArray;
   }
-  
-  addOthers(){
-    this.getOtherForm.push(new FormGroup({
-      'otherName':new FormControl(),
-      'otherDesc':new FormControl()
-    }))
+
+  addOthers() {
+    this.getOtherForm.push(this.fb.group({
+      'otherName': this.fb.control(''),
+      'otherDesc': this.fb.control('')
+    }));
   }
-  
-  removeOthers(index:number){
+
+  removeOthers(index: number) {
     this.getOtherForm.removeAt(index);
   }
 
-  get sizes(){
+  get sizes() {
     return this.productForm.get('sizes') as FormArray;
   }
 
-  addSize(){
-    this.sizes.push(new FormControl())
+  addSize() {
+    this.sizes.push(this.fb.control(''));
   }
 
-  removeSize(index){
+  removeSize(index) {
     this.sizes.removeAt(index);
   }
 
-  preview(files:File[]){
-   this.images=[];
-   [...files].forEach(file => this.upload(file))
+  preview(files: File[]) {
+    this.images = [];
+    [...files].forEach(file => this.upload(file));
   }
-  upload(file:File){
+
+  upload(file: File) {
     let reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => this.images.push(
@@ -76,83 +82,65 @@ export class ProductFormComponent implements OnInit {
     );
   }
 
-  save(files: File[]){
+  save(files: File[]) {
     let product = this.productForm.value;
     product.others = CommonUtils.mapToObj(product.others);
-    
-    if(this.product){
-      product.id=this.product.id;
+
+    if (this.product) {
+      product.id = this.product.id;
     }
     this.uploadService.upload(files).pipe(
       switchMap(
         photos => {
           product.photo = photos;
-          return this.productService.save(product)
+          return this.productService.save(product);
         }
       )
-    ).subscribe(responseData =>{
+    ).subscribe(responseData => {
       this.productForm.reset();
-      this.router.navigate(['/home'])
-    } )
+      this.router.navigate(['/home']);
+    });
   }
 
-  
 
-  private initForm(){
-    
-    let name='';
-    let category=null;
-    let quantity =0;
-    let price =0;
-    let description='';
-    let sizes =new FormArray([]);
-    let others =new FormArray([]);
+  private initForm() {
+    this.productForm = this.fb.group({
+      'name': this.fb.control(this.product?.name || '', [Validators.required]),
+      'category': this.fb.control(this.product?.category || ''),
+      'price': this.fb.control(this.product?.price || 0, [Validators.required]),
+      'sizes': this.fb.array([]),
+      'others': this.fb.array(
+       [...Object.keys(this.product?.others || {}).map(key => this.fb.group({
+          'otherName': this.fb.control(key, [Validators.required]),
+          'otherDesc': this.fb.control(this.product?.others[key], [Validators.required])
+        }))]
+      ),
+      'description': this.fb.control(this.product?.description || '', [Validators.required])
+    });
 
-    if(this.product){
-      
-      name=this.product.name;
-      category =this.product.category;
-      quantity=this.product.quantity;
-      price=this.product.price;
-      description=this.product.description;
-      
-      this.product.sizes?.forEach(size => sizes.push(new FormControl(size)))
-      
-
-      if(this.product.others){
-        for(let[key,value] of CommonUtils.objToMap(this.product.others)){
-          others.push(new FormGroup({
-            'otherName':new FormControl(key),
-            'otherDesc':new FormControl(value)
-          }))
-        }
-      }
-      
+    if (this.product){
+      this.product?.sizes.forEach(size => this.sizes.push(this.fb.control(size, [Validators.required])))
     }
-    this.productForm = new FormGroup({
-      'name': new FormControl(name, [Validators.required]),
-      'category': new FormControl(category, [Validators.required]),
-      'quantity': new FormControl(quantity, [Validators.required]),
-      'price': new FormControl(price, [Validators.required]),
-      'sizes':sizes,
-      'description': new FormControl(description, [Validators.required]),
-      'others': others
-    })
   }
+
   get name() {
     return this.productForm.get('name');
   }
+
   get category() {
     return this.productForm.get('category');
   }
+
   get quantity() {
     return this.productForm.get('quantity');
   }
+
   get price() {
     return this.productForm.get('price');
   }
+
   get description() {
     return this.productForm.get('description');
   }
-  
+
 }
